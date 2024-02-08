@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Color defaultColor;
     public SpriteRenderer sr;
 
+    private Item lastItemCollidedWith;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag == "Item")
         {
             Debug.Log("We Collided");
-            defaultColor = collision.gameObject.GetComponent<Item>().itemColor;
+            lastItemCollidedWith = collision.gameObject.GetComponent<Item>();
+            defaultColor = lastItemCollidedWith.itemColor;
             sr.color = defaultColor;
             Destroy(collision.gameObject);
         }
