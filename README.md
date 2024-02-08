@@ -1,1 +1,1 @@
-# Jay_MTEC2210_MideTerm
+# Jay_MTEC2210_MidTerm
